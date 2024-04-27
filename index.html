@@ -97,6 +97,10 @@
             total_quantity.innerText = `${quantity} X 50,000`;
             total_sum.innerText = `total: ${quantity * 50000}`;
           }
+          else
+          {
+            alert("can't add more than 5")
+          }
 
         }
 
@@ -111,6 +115,10 @@
             total_quantity.innerText = `${quantity} X 50,000`;
             total_sum.innerText = `total: ${quantity * 50000}`;
 
+          }
+          else
+          {
+            alert("can't be less than 1")
           }
         }
       </script>
