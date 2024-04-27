@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    body {
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      display: block;
+      margin: 10px auto;
+      width: 280px;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+    .card-img {
+      background-color: #0093e9;
+      background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+      border-radius: 5px;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .product-title {
+    }
+    .product-summery {
+      font-size: 12px;
+    }
+    .price {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .quantity {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .btn {
+      height: 25px;
+    }
+    .items {
+      font-size: 22px;
+      margin: 0 5px;
+    }
+
+    .buy {
+      background-color: #0093e9;
+      background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      display: block;
+      margin: 10px auto;
+    }
+    .description {
+      margin-left: 10px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <img src="ps5-product-thumbnail-01-en-14sep21.webp" class="card-img" />
+      <div class="description">
+        <h2 class="product-title">PS 5</h2>
+        <p class="product-summery">
+          The PlayStation 5 (PS5) is a home video game console developed by Sony
+          Interactive Entertainment.
+        </p>
+        <span class="price">₹50,000</span>
+        <p id="total-quantity">1 X 50,000</p>
+        <p id="total-price">total: 50,000</p>
+      </div>
+      <div class="quantity">
+        <img src="minus.png" class="btn" id="decrement" onclick="dec()" />
+        <span class="items" id="quantity">1</span>
+        <img src="plus.png" class="btn" id="increment" onclick="inc()" />
+      </div>
+
+      <button class="buy">Buy Now</button>
+
+      <script>
+        function inc() {
+          const quantity_text = document.getElementById("quantity");
+          let quantity = parseInt(quantity_text.innerText);
+          let total_quantity = document.getElementById("total-quantity");
+          const total_sum = document.getElementById("total-price");
+
+          
+
+          if (quantity < 5) {
+            quantity_text.innerText = ++quantity;
+            total_quantity.innerText = `${quantity} X 50,000`;
+            total_sum.innerText = `total: ${quantity * 50000}`;
+          }
+
+        }
+
+        function dec() {
+          const quantity_text = document.getElementById("quantity");
+          let quantity = parseInt(quantity_text.innerText);
+          let total_quantity = document.getElementById("total-quantity");
+          const total_sum = document.getElementById("total-price");
+
+          if (quantity > 1) {
+            quantity_text.innerText = --quantity;
+            total_quantity.innerText = `${quantity} X 50,000`;
+            total_sum.innerText = `total: ${quantity * 50000}`;
+
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>
